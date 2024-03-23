@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "Hash": "UaeNmfbXjv6qOoH/d4wc8UUiNG8mKRUVgraLgkMXLnQ=",
+  "Source": "PRSCGraham",
+  "BasePath": "_content/PRSCGraham",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "PRSCGraham\\wwwroot",
+      "Source": "PRSCGraham",
+      "ContentRoot": "C:\\Users\\max-student\\source\\repos\\PRSCGraham\\PRSCGraham\\wwwroot\\",
+      "BasePath": "_content/PRSCGraham",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\max-student\\source\\repos\\PRSCGraham\\PRSCGraham\\wwwroot\\index.html",
+      "SourceId": "PRSCGraham",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\max-student\\source\\repos\\PRSCGraham\\PRSCGraham\\wwwroot\\",
+      "BasePath": "_content/PRSCGraham",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\max-student\\source\\repos\\PRSCGraham\\PRSCGraham\\wwwroot\\photos\\dell keyboard.jpg",
+      "SourceId": "PRSCGraham",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\max-student\\source\\repos\\PRSCGraham\\PRSCGraham\\wwwroot\\",
+      "BasePath": "_content/PRSCGraham",
+      "RelativePath": "photos/dell keyboard.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\dell keyboard.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\max-student\\source\\repos\\PRSCGraham\\PRSCGraham\\wwwroot\\photos\\dell laptop.jpg",
+      "SourceId": "PRSCGraham",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\max-student\\source\\repos\\PRSCGraham\\PRSCGraham\\wwwroot\\",
+      "BasePath": "_content/PRSCGraham",
+      "RelativePath": "photos/dell laptop.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\dell laptop.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\max-student\\source\\repos\\PRSCGraham\\PRSCGraham\\wwwroot\\photos\\dell mouse.jpg",
+      "SourceId": "PRSCGraham",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\max-student\\source\\repos\\PRSCGraham\\PRSCGraham\\wwwroot\\",
+      "BasePath": "_content/PRSCGraham",
+      "RelativePath": "photos/dell mouse.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\dell mouse.jpg"
+    }
+  ]
+}
