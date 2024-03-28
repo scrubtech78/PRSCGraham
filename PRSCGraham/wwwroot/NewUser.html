@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>PRS New User</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 100px;
+            float: left;
+            margin: 1px;
+            text-align:right;
+            color: blue;
+            
+        }
+        #email{
+            
+        }
+
+        input{
+            width:150;
+            margin-bottom:5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create a New User</h1>
+    <form id="newUser">
+        <label>UserId:</label>
+        <input type="text" id="userName" name="userName" value="Fred0000" />
+        <br>
+        <label>Password:</label>
+        <input type="password" id="password" name="password" />
+        <br>
+        <label>FirstName:</label>
+        <input type="text" name="firstName" />
+        <br>
+        <label>LastName:</label>
+        <input type="text" name="lastName" />
+        <br>
+        <label>Admin</label>
+        <input type="text" name="admin" value="false" />
+        <br>
+        <label>Reviewer</label>
+        <input type="text" name="reviewer" value="false" />
+        <br>
+        <label>Email:</label>
+        <input type="email" id="email" name="email" />
+        <br>
+
+       
+    </form>
+    <button onclick="SaveUser()">Save</button>
+    <h3>Json Being Sent</h3>
+    <div id="jsonText"></div>
+
+
+    <h3>Ready State</h3>
+    <div id="readyState"></div>
+
+
+    <script>
+        function SaveUser() {
+            var newUser = document.getElementById("newUser");
+            let theData = new FormData(newUser);
+            alert(theData.get("firstName"));
+
+
+
+            let readystatemsg = document.getElementById("readyState");
+            //convert to JSON
+            var jsonString = JSON.stringify(Object.fromEntries(theData.entries())); //form Data
+            //clean Json
+            jsonString = jsonString.replaceAll("\"false\"", "false");            jsonString = jsonString.replaceAll("\"true\"", "true");
+
+            document.getElementById('jsonText').innerText = jsonString;
+            alert("got JSON");
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'api/users');
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            xhr.onreadystatechange = function () {                // console.log(xhr.readyState.toString())                switch (xhr.readyState) {                    case XMLHttpRequest.OPENED: readystatemsg.innerHTML += "Open (1) <br>"; break;                    case XMLHttpRequest.HEADERS_RECEIVED: readystatemsg.innerHTML += "Headers Received (2) <br>"; break;                    case XMLHttpRequest.LOADING: readystatemsg.innerHTML += "Loading (3) <br>"; break;                    case XMLHttpRequest.DONE:                        // display a status message                        readystatemsg.innerHTML += "Done (4) <br>";                        alert("Call complete.\n\n" + xhr.response.toString());                        //form.reset();                        //reset form after AJAX success or do something else                        break;                    default:                        readystatemsg += xhr.readyState + " (other)<br>"; break;                        break;                }                           }
+            xhr.send(jsonString);
+            alert("Done");
+        }
+
+    </script>
+
+
+</body>
+</html>

@@ -71,20 +71,20 @@ namespace PRSCGraham.Controllers
 
             return vendor;
         }
-       /* [HttpGet("code")]        //vendor summary attempt
-        public Task<ActionResult<Vendor>> GetVendorSummary(string vendorcode)
-        {
-            int vendor = _context.Vendors.Include(p => p.Product)
-                .Where(v => v.Code == vendorcode && v.Name == vendorcode)
-                .Sum(p => p.Product.Id);
-
-
-            var vendorSum = _context.Vendors.Where(v => v.Code == vendorcode && v.Name == vendorcode);
-            return vendorSum;
+       // [HttpGet("code")]        //vendor summary attempt
+       // public Task<ActionResult<Vendor>> GetVendorSummary(Vendor vendorcode)
+       ////method to count products 
+           // var vendor = _context.Vendors.Include(p => p.Product)
+               // .Where(v => v.Code == vendorcode.Code && v.Name == vendorcode.Name)
+              //  .Sum(p => p.Product.Name.Count());
+            
+            //returning the new request
+           // var vendorSum = _context.Vendors.Where(v => v.Code == vendorcode.Code && v.Name == vendorcode.Name);
+           // return vendorSum;
             
             
 
-        }*/
+        
         // PUT: api/Vendors/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

@@ -20,7 +20,7 @@ namespace PRSCGraham.Controllers
             _context = context;
         }
         //todo: POST: api/Users/login
-        [HttpPost("userlogin")] 
+        [HttpPost("login")] 
     
     
         public ActionResult GetuserNamePassword([FromBody] usernameLogin login)

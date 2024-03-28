@@ -48,7 +48,7 @@ namespace PRSCGraham.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutRequest(int id, Request request)
         {
-            if (id != request.UserId)
+            if (id != request.Id)
             {
                 return BadRequest();
             }
@@ -137,24 +137,27 @@ namespace PRSCGraham.Controllers
             }
             return request;
         }
-        [HttpGet("reviews/{UserId}")]
-        public async Task<ActionResult<IEnumerable<Request>>> GetReviews(int id)
-        {
-            var request = await _context.Requests
-                .Include(r => r.User)
-                .Where(r => r.UserId != id && r.Status == "Review").ToListAsync();
-            if (request == null)
+        [HttpGet("reviews/{userid}")]   // api/reviews/3
+        public async Task<ActionResult<IEnumerable<Request>>> GetReviews(int userid)
+        {//id is userid
+            var reviews = await _context.Requests
+                .Include(u => u.User)
+                .Where(r => r.UserId != userid && r.Status == "Review").ToListAsync();
+            if(reviews == null)
             {
                 return NotFound();
             }
+           
+            
+                return Ok(reviews);
+
+             
 
 
-            {
-                await _context.SaveChangesAsync();
-            }
+          
 
 
-            return request;
+            
         }
 
         [HttpPost("Approve/{id}")]
@@ -165,7 +168,7 @@ namespace PRSCGraham.Controllers
             {
                 return NotFound();
             }
-            request.Status = "APPROVE";
+            request.Status = "APPROVED";
             try
             {
                 await _context.SaveChangesAsync();
@@ -180,7 +183,7 @@ namespace PRSCGraham.Controllers
         }
     
 
-      /*      [HttpPost("ReviewRequest/{id}")]
+            [HttpPost("ReviewRequest/{id}")]
         public async Task<ActionResult<Request>> ReviewRequest(int id)
 
         {
@@ -189,11 +192,18 @@ namespace PRSCGraham.Controllers
             {
                 return NotFound();
             }
-            decimal totalRequest = 0;
+            decimal totalRequest = request.Total;
             if(totalRequest<= 50m)
             {
-                request.Status = "REVIEW";
+                request.Status = "Approved";
             }
-        }*/
+            else{
+                request.Status="Review";
+      }
+            
+      await _context.SaveChangesAsync();
+            return request;
+
+        }
     }
 }

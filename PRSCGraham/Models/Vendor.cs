@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace PRSCGraham.Models
 {
@@ -15,13 +16,14 @@ namespace PRSCGraham.Models
         public string City { get; set; }
         public string State { get; set; }
         public string Zip { get; set; }
-        [Required]
+       
         [StringLength(12)]
-        public string Phone { get; set; }
-        [Required]
+        public string?Phone { get; set; }
+      
         [StringLength(75)]
-        public string Email { get; set; }
-        public Product? Product { get; set; }
+        public string? Email { get; set; }
+        [JsonIgnore]
+        public List<Product>? Products { get; set; }
 
     }
 }
