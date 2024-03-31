@@ -142,7 +142,7 @@ namespace PRSCGraham.Controllers
         {//id is userid
             var reviews = await _context.Requests
                 .Include(u => u.User)
-                .Where(r => r.UserId != userid && r.Status == "Review").ToListAsync();
+                .Where(r => r.UserId != userid && r.Status == "REVIEW").ToListAsync();
             if(reviews == null)
             {
                 return NotFound();
@@ -183,7 +183,7 @@ namespace PRSCGraham.Controllers
         }
     
 
-            [HttpPost("ReviewRequest/{id}")]
+            [HttpPost("Review/{id}")]
         public async Task<ActionResult<Request>> ReviewRequest(int id)
 
         {
@@ -195,10 +195,10 @@ namespace PRSCGraham.Controllers
             decimal totalRequest = request.Total;
             if(totalRequest<= 50m)
             {
-                request.Status = "Approved";
+                request.Status = "APPROVED";
             }
             else{
-                request.Status="Review";
+                request.Status="REVIEW";
       }
             
       await _context.SaveChangesAsync();

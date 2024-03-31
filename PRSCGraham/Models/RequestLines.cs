@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PRSCGraham.Models
 {
-    [Table ("RequestLines")]
+    [Table ("LineItem")]
     public class RequestLines
 
     {
